@@ -3,5 +3,8 @@ from .models import Post
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ()
+    list_display = ('picture', 'title', 'content')
+
+
+admin.site.register(Post, PostAdmin)
 

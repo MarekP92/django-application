@@ -1,4 +1,6 @@
 {% load static %}
+{% static posts %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,7 +80,6 @@
 
    <!-- calculator section -->
 
-      <div class="container">
   <div class="price-box">
     <div class="row">
       <div class="col-sm-6">
@@ -124,7 +125,6 @@
               </div>
             </div>
           </div>
-      </div>
       <div class="col-sm-6">
         <div class="price-form">
 
@@ -174,7 +174,7 @@
             </div>
           </div>
         </div>
-        </form>
+
   </div>
 </div>
 
@@ -238,12 +238,12 @@
       </div>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <a href="#"><img class="card-img-top" src= {{ posts[0].picture }} alt=""></a>
           <div class="card-body">
-            <h4 class="card-title">
+            <h4 class= {{ posts[].title }}>
               <a href="#">Project Six</a>
             </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+            <p class= {{ posts[0].content }}></p>
           </div>
         </div>
       </div>
