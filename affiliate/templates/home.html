@@ -1,5 +1,4 @@
 {% load static %}
-{% static posts %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,16 +83,19 @@
     <div class="row">
       <div class="col-sm-6">
         <form class="form-horizontal form-pricing" role="form">
-
           <div class="price-slider">
             <h4 class="great">Amount</h4>
             <span>Minimum $100K is required</span>
             <div class="col-sm-12">
-              <div id="slider_amirol"></div>
+              <div id="slider_amirol">
             </div>
           </div>
-          <div class="price-slider">
-            <h4 class="great">Duration</h4>
+      </div>
+      </div>
+      </div>
+
+      <div class="price-slider">
+          <h4 class="great">Duration</h4>
             <span>Please choose one</span>
             <div class="btn-group btn-group-justified">
               <div class="btn-group btn-group-lg">
@@ -127,7 +129,6 @@
           </div>
       <div class="col-sm-6">
         <div class="price-form">
-
           <div class="form-group">
             <div class="row">
               <div class="col-sm-6">
@@ -174,79 +175,24 @@
             </div>
           </div>
         </div>
+      </div>
 
-  </div>
-</div>
 
     <!-- Campaigns -->
-
     <div class="row">
+        {% for post in view.posts %}
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
           <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#">Project One</a>
+              <a href="#">{{ post.title }}</a>
             </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+            <p class="card-text">{{ post.content }}</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Two</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Three</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Four</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Five</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src= {{ posts[0].picture }} alt=""></a>
-          <div class="card-body">
-            <h4 class= {{ posts[].title }}>
-              <a href="#">Project Six</a>
-            </h4>
-            <p class= {{ posts[0].content }}></p>
-          </div>
-        </div>
-      </div>
+        {% endfor %}
     </div>
 
   <!-- Footer -->
